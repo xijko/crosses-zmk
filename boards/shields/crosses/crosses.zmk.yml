@@ -1,0 +1,11 @@
+file_format: "1"
+id: crosses
+name: Crosses
+type: shield
+url: https://github.com/Good-Great-Grand-Wonderful/crosses
+requires: [nice_nano_v2]
+features:
+  - keys
+siblings:
+  - crosses_left
+  - crosses_right
