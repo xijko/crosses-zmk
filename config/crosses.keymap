@@ -6,7 +6,7 @@
         hml: hml {
             compatible = "zmk,behavior-hold-tap";
             label = "HML";
-            bindings = <&none>, <&none>;
+            bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -20,7 +20,7 @@
         hmr: hmr {
             compatible = "zmk,behavior-hold-tap";
             label = "HMR";
-            bindings = <&none>, <&none>;
+            bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -37,19 +37,19 @@
 
         default_layer {
             bindings = <
-&kp Q     &kp W           &kp F        &kp P             &kp B      &kp J        &kp L              &kp U         &kp Y            &kp SEMICOLON
-&hml 0 0  &mt LEFT_ALT R  &mt LCTRL S  &mt LEFT_SHIFT T  &kp G      &kp M        &mt RIGHT_SHIFT N  &mt RCTRL E   &mt RIGHT_ALT I  &mt RIGHT_GUI O
-&kp Z     &kp X           &kp C        &kp D             &kp V      &kp K        &kp H              &kp COMMA     &kp DOT          &lt 3 SLASH
-                          &kp N1       &lt 2 ESCAPE      &kp SPACE  &lt 1 ENTER  &kp BACKSPACE      &lt 4 DELETE
+&kp Q            &kp W            &kp F         &kp P              &kp B      &kp J        &kp L               &kp U         &kp Y             &kp SEMICOLON
+&hml LEFT_GUI A  &hml LEFT_ALT R  &hml LCTRL S  &hml LEFT_SHIFT T  &kp G      &kp M        &hmr RIGHT_SHIFT N  &hmr RCTRL E  &hmr RIGHT_ALT I  &hmr RIGHT_GUI O
+&kp Z            &kp X            &kp C         &kp D              &kp V      &kp K        &kp H               &kp COMMA     &kp DOT           &lt 3 SLASH
+                                  &kp N1        &lt 2 ESCAPE       &kp SPACE  &lt 1 ENTER  &kp BACKSPACE       &lt 4 DELETE
             >;
         };
 
         num {
             bindings = <
-&kp LS(STAR)  &kp N7  &kp N8  &kp N9  &kp BSLH      &kp FSLH       &kp LS(LPAR)  &kp LS(RPAR)  &trans         &trans
-&kp MINUS     &kp N4  &kp N5  &kp N6  &kp LS(PLUS)  &kp LS(PRCNT)  &kp LS(LBRC)  &kp LS(RBRC)  &kp LS(COLON)  &kp SEMI
-&kp GRAVE     &kp N1  &kp N2  &kp N3  &kp EQUAL     &kp LBKT       &kp RBKT      &trans        &trans         &trans
-                      &trans  &kp N0  &trans        &trans         &trans        &trans
+&kp LS(STAR)  &kp N7  &kp N8  &kp N9              &kp BSLH      &kp FSLH       &kp LS(LPAR)           &kp LS(RPAR)         &kp PIPE              &trans
+&kp MINUS     &kp N4  &kp N5  &hml LEFT_SHIFT N6  &kp LS(PLUS)  &kp LS(PRCNT)  &hmr RIGHT_SHIFT LBRC  &hmr LS(RCTRL) RBRC  &hmr RIGHT_ALT COLON  &hmr RIGHT_GUI SEMICOLON
+&kp GRAVE     &kp N1  &kp N2  &kp N3              &kp EQUAL     &kp LBKT       &kp RBKT               &trans               &trans                &trans
+                      &trans  &kp N0              &trans        &trans         &trans                 &trans
             >;
         };
 
