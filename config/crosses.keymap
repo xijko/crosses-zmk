@@ -32,6 +32,75 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        s_arr {
+            bindings = <&skinny_arrow>;
+            key-positions = <13 16>;
+        };
+
+        f_arr {
+            bindings = <&fat_arrow>;
+            key-positions = <14 15>;
+        };
+
+        p_ipe {
+            bindings = <&pipe>;
+            key-positions = <23 26>;
+        };
+
+        s_vim {
+            bindings = <&save_vim>;
+            key-positions = <1 32>;
+        };
+
+        caps {
+            bindings = <&caps_word>;
+            key-positions = <10 19>;
+        };
+
+        under {
+            bindings = <&kp UNDERSCORE>;
+            key-positions = <26 27>;
+        };
+
+        min {
+            bindings = <&kp MINUS>;
+            key-positions = <27 28>;
+        };
+    };
+
+    macros {
+        skinny_arrow: skinny_arrow {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS &kp GREATER_THAN>;
+            label = "SKINNY_ARROW";
+        };
+
+        fat_arrow: fat_arrow {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp EQUAL &kp GREATER_THAN>;
+            label = "FAT_ARROW";
+        };
+
+        pipe: pipe {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp PIPE &kp GREATER_THAN>;
+            label = "PIPE";
+        };
+
+        save_vim: save_vim {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp ESCAPE &kp COLON &kp W &kp ENTER>;
+            label = "SAVE_VIM";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
