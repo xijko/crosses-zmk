@@ -84,6 +84,11 @@
             bindings = <&kp TAB>;
             key-positions = <1 8>;
         };
+
+        studio {
+            bindings = <&studio_unlock>;
+            key-positions = <0 9>;
+        };
     };
 
     macros {
@@ -139,9 +144,9 @@
 
         nav {
             bindings = <
-&none     &none     &none      &none       &none        &none  &none           &none         &none           &none
-&kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT   &none        &none  &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
-&none     &none     &none      &kp K_COPY  &kp K_PASTE  &none  &kp C_AC_HOME   &kp END       &kp PAGE_DOWN   &kp PAGE_UP
+&none     &none     &none      &none       &none        &none  &none           &none           &none          &none
+&kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT   &none        &none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW   &kp RIGHT_ARROW
+&none     &none     &none      &kp K_COPY  &kp K_PASTE  &none  &kp C_AC_HOME   &kp END         &kp PAGE_DOWN  &kp PAGE_UP
                     &none      &none       &none        &none  &none           &none
             >;
         };
