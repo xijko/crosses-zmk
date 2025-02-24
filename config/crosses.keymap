@@ -90,6 +90,16 @@
             bindings = <&studio_unlock>;
             key-positions = <0 9>;
         };
+
+        s_quote {
+            bindings = <&kp SINGLE_QUOTE>;
+            key-positions = <2 7>;
+        };
+
+        d_quote {
+            bindings = <&kp DOUBLE_QUOTES>;
+            key-positions = <3 6>;
+        };
     };
 
     macros {
