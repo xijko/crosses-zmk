@@ -79,6 +79,11 @@
             bindings = <&bootloader>;
             key-positions = <0 20>;
         };
+
+        tabby {
+            bindings = <&kp TAB>;
+            key-positions = <1 8>;
+        };
     };
 
     macros {
