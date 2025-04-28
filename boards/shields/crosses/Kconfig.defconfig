@@ -1,6 +1,4 @@
 CONFIG_ZMK_USB=y
-config ZMK_STUDIO
-  default y
 
 if SHIELD_CROSSES_RIGHT
 
