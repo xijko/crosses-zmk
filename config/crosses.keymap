@@ -18,51 +18,5 @@
                            &bt BT_CLR_ALL  &kp LGUI  &to 1   &to 2   &kp BSPC  &kp RCTRL
             >;
         };
-
-        func {
-            bindings = <
-&trans  &trans                                                                  &trans   &trans
-&trans  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans   &kp F12
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans   &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans   &trans
-                        &trans  &trans  &none   &none   &trans  &trans
-            >;
-        };
-
-        num {
-            bindings = <
-&none  &none                                                          &none  &none
-&none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
-                     &none  &none  &none  &none  &none  &none
-            >;
-        };
-
-        nav {
-            bindings = <
-&none  &none                                                                               &bt BT_PRV  &bt BT_NXT
-&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none  &none  &none  &none  &none  &none  &none       &none
-&none  &none         &none         &none         &none  &none  &none  &none  &none  &none  &none       &none
-&none  &none         &none         &none         &none  &none  &none  &none  &none  &none  &none       &none
-&none  &none         &none         &none         &none  &none  &none  &none  &none  &none  &none       &none
-                                   &bt BT_CLR    &none  &none  &none  &none  &none
-            >;
-        };
-
-        media {
-            bindings = <
-&none  &none                                                          &none  &none
-&none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
-                     &none  &none  &none  &none  &none  &none
-            >;
-        };
     };
-
-    conditional_layers { compatible = "zmk,conditional-layers"; };
 };
