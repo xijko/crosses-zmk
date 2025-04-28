@@ -1,5 +1,4 @@
-config ZMK_USB
-  default y
+CONFIG_ZMK_USB=y
 
 if SHIELD_CROSSES_RIGHT
 
