@@ -3,7 +3,7 @@ CONFIG_ZMK_USB=y
 if SHIELD_CROSSES_LEFT
 
 config ZMK_KEYBOARD_NAME
-  default "Crosses 36 BLE"
+  default "Crossyboi BLE"
 
 config ZMK_SPLIT_ROLE_CENTRAL
   default y
