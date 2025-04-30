@@ -25,7 +25,7 @@
                            &bt BT_CLR_ALL  &kp LGUI  &to 1   &to 2   &kp BSPC  &kp RCTRL
             >;
 
-            sensor-bindings = <&rot_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
         };
     };
 };
