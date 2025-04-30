@@ -3,7 +3,14 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
-    combos { compatible = "zmk,combos"; };
+    combos {
+        compatible = "zmk,combos";
+
+        studio_unlock {
+            bindings = <&studio_unlock>;
+            key-positions = <0 1>;
+        };
+    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -17,7 +24,8 @@
 &kp LCTRL  &kp Z   &kp X   &kp C           &kp V     &kp B   &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
                            &bt BT_CLR_ALL  &kp LGUI  &to 1   &to 2   &kp BSPC  &kp RCTRL
             >;
-sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
     };
 };
