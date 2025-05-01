@@ -25,7 +25,7 @@
                            &mkp MCLK  &kp LGUI  &none   &none   &kp BSPC  &kp RCTRL
             >;
 
-            sensor-bindings = <&inc_dec_kp UP DOWN>;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
         };
     };
 };
