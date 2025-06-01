@@ -73,14 +73,9 @@
   trackball_listener {
     compatible = "zmk,input-listener";
     device = <&trackball>;
-
-
-
   };
+};
 
 &right_encoder {
     status = "okay";
 };
-
-};
-
