@@ -75,9 +75,12 @@
     device = <&trackball>;
 
 
+
+  };
+
 &right_encoder {
     status = "okay";
 };
-  };
+
 };
 
