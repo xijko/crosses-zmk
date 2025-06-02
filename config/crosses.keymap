@@ -14,7 +14,7 @@
 
         to_bt_control {
             bindings = <&to 3>;
-            key-positions = <54 55>;
+            key-positions = <53 56>;
         };
     };
 
