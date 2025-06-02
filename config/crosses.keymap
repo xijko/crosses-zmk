@@ -11,6 +11,11 @@
             bindings = <&studio_unlock>;
             key-positions = <0 1>;
         };
+
+        to_bt_control {
+            bindings = <&to 3>;
+            key-positions = <54 55>;
+        };
     };
 
     keymap {
