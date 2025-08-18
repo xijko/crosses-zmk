@@ -49,3 +49,22 @@ RC(0,0)  RC(0,1)  RC(0,10) RC(0,11) RC(1,0)  RC(1,1)  RC(1,2)  RC(1,3)  RC(1,4) 
 	};
 
 };
+
+/ {
+	split_inputs {
+		#address-cells = <1>;
+		#size-cells = <0>;
+
+		glidepoint_split: glidepoint_split@0 {
+			compatible = "zmk,input-split";
+			reg = <0>;
+		};
+	};
+	
+    glidepoint_listener: glidepoint_listener {
+        compatible = "zmk,input-listener";
+        status = "disabled";
+        device = <&glidepoint_split>;
+    };
+};
+
