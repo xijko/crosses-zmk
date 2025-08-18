@@ -30,9 +30,9 @@
     status = "okay";
 };
 
-/* Right-half peripheral configuration */
-/{
+/ {
     chosen {
+        // Peripheral (secondary) half
         zmk,split-role = "peripheral";
     };
 
@@ -40,17 +40,18 @@
         glidepoint_split_0: glidepoint_split_0@0 {
             compatible = "zmk,input-split";
             status = "okay";
-            reg = <0>;
-            input = <&glidepoint0>;
+            reg = <0>;                     // Required 'reg'
+            input-devices = <&glidepoint0>; // Use input-devices instead of input
         };
     };
 };
 
-/* Cirque Glidepoint on SPI using new pinctrl-0 style */
+// SPI0 with pinctrl
 &spi0 {
     status = "okay";
+    pinctrl-0 = <&spi0_default>;
+    pinctrl-names = "default";
 
-    pinctrl-0 = <&spi0_sck_pin &spi0_mosi_pin &spi0_miso_pin>;
     cs-gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;
 
     glidepoint0: glidepoint@0 {
@@ -62,20 +63,13 @@
     };
 };
 
-&gpio0 {
-    spi0_sck_pin: spi0_sck_pin {
-        gpio-hog;
-        gpios = <31 GPIO_ACTIVE_HIGH>;
-        input;
-    };
-    spi0_mosi_pin: spi0_mosi_pin {
-        gpio-hog;
-        gpios = <29 GPIO_ACTIVE_HIGH>;
-        input;
-    };
-    spi0_miso_pin: spi0_miso_pin {
-        gpio-hog;
-        gpios = <20 GPIO_ACTIVE_HIGH>;
-        input;
+// Pin control group for SPI0
+&pinctrl {
+    spi0_default: spi0_default {
+        group1 {
+            psels = <NRF_PSEL(SPIM_SCK, 0, 31)>,
+                    <NRF_PSEL(SPIM_MOSI, 0, 29)>,
+                    <NRF_PSEL(SPIM_MISO, 0, 20)>;
+        };
     };
 };
