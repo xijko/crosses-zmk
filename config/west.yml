@@ -9,7 +9,7 @@ manifest:
       remote: petejohanson
       revision: main
     - name: zmk
-      remote: zmkfirmware
+      remote: petejohanson
       revision: feat/pointers-move-scroll
   self:
     path: config
