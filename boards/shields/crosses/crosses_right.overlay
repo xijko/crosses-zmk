@@ -1,38 +1,38 @@
 #include "crosses.dtsi"
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 
+/* Default keymap transform */
 &default_transform {
-  col-offset = <6>;
+    col-offset = <6>;
 };
 
+/* Key matrix */
 &kscan0 {
-  col-gpios
-    = 
-     <&gpio0 9 GPIO_ACTIVE_HIGH>
-    , <&gpio0 10 GPIO_ACTIVE_HIGH>
-    , <&gpio1 11 GPIO_ACTIVE_HIGH>
-    , <&gpio1 13 GPIO_ACTIVE_HIGH>
-    , <&gpio1 15 GPIO_ACTIVE_HIGH>
-    , <&gpio0 2 GPIO_ACTIVE_HIGH>
-    ;
+    col-gpios = 
+        <&gpio0 9 GPIO_ACTIVE_HIGH>,
+        <&gpio0 10 GPIO_ACTIVE_HIGH>,
+        <&gpio1 11 GPIO_ACTIVE_HIGH>,
+        <&gpio1 13 GPIO_ACTIVE_HIGH>,
+        <&gpio1 15 GPIO_ACTIVE_HIGH>,
+        <&gpio0 2 GPIO_ACTIVE_HIGH>;
 
-    row-gpios
-      = <&gpio1 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-      , <&gpio1 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-      , <&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-      , <&gpio1 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-      , <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-      , <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-      ;
+    row-gpios = 
+        <&gpio1 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+        <&gpio1 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+        <&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+        <&gpio1 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+        <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+        <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
 };
 
+/* Enable the Glidepoint input listener */
 &glidepoint_listener {
     status = "okay";
 };
 
-/ {
+/* Right-half peripheral configuration */
+{
     chosen {
-        // Peripheral (secondary) half
         zmk,split-role = "peripheral";
     };
 
@@ -45,20 +45,34 @@
     };
 };
 
-// Cirque Glidepoint on SPI
+/* Cirque Glidepoint on SPI using new pinctrl-0 style */
 &spi0 {
     status = "okay";
 
-    sck-pin = <31>;
-    mosi-pin = <29>;
-    miso-pin = <20>;
-    cs-gpios = <&gpio0 6 GPIO_ACTIVE_LOW>; 
+    pinctrl-0 = <&spi0_sck_pin &spi0_mosi_pin &spi0_miso_pin>;
+    cs-gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;
 
     glidepoint0: glidepoint@0 {
         compatible = "cirque,glidepoint";
-        reg = <0>;  // CS index 0
+        reg = <0>;  /* CS index 0 */
         spi-max-frequency = <1000000>;
         irq-gpios = <&gpio0 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         status = "okay";
+    };
+};
+
+/* Define SPI pins via pinctrl nodes */
+&gpio0 {
+    spi0_sck_pin: spi0_sck_pin {
+        nordic,nrf-pin = <31>;
+        nordic,nrf-pin-function = <1>; /* SPIM SCK */
+    };
+    spi0_mosi_pin: spi0_mosi_pin {
+        nordic,nrf-pin = <29>;
+        nordic,nrf-pin-function = <1>; /* SPIM MOSI */
+    };
+    spi0_miso_pin: spi0_miso_pin {
+        nordic,nrf-pin = <20>;
+        nordic,nrf-pin-function = <1>; /* SPIM MISO */
     };
 };
