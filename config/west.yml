@@ -8,14 +8,8 @@ manifest:
       url-base: https://github.com/mctechnology17
   projects:
     - name: zmk
-      remote: zmkfirmware
-      revision: main
-      import: app/west.yml
-    - name: cirque-input-module # <-- enable the drivers
       remote: petejohanson
-      revision: main
-    - name: zmk-cirque-adapter # <-- enable this module
-      remote: mctechnology17
-      revision: main
+      revision: feat/pointers-move-scroll
+      import: app/west.yml
   self:
     path: config
