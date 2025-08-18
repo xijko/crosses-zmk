@@ -6,11 +6,6 @@
     combos {
         compatible = "zmk,combos";
 
-        studio_unlock {
-            bindings = <&kp FLSH>;
-            key-positions = <0 1>;
-        };
-
         to_bt_control {
             bindings = <&sl 3>;
             key-positions = <54 55>;
