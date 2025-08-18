@@ -39,7 +39,7 @@
         glidepoint_split_0: glidepoint_split_0@0 {
             compatible = "zmk,input-split";
             status = "okay";
-            reg = <0>;
+            reg = <0 0 0>;
             device = <&glidepoint0>;
         };
     };
