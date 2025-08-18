@@ -50,15 +50,19 @@
 };
 
 // Cirque Glidepoint on SPI
-&spi1 {
+&spi0 {
     status = "okay";
-    cs-gpios = <&gpio0 06 GPIO_ACTIVE_LOW>;   // chip select pin
+
+    sck-pin = <31>;
+    mosi-pin = <29>;
+    miso-pin = <20>;
+    cs-gpios = <&gpio0 06 GPIO_ACTIVE_LOW>; 
 
     glidepoint0: glidepoint@0 {
         compatible = "cirque,glidepoint";
-        reg = <0>;  // chip select 0 on spi1
-        spi-max-frequency = <1000000>; // 1MHz, adjust if needed
-        irq-gpios = <&gpio0 08 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; // INT/RDY pin
+        reg = <0>;  // CS index 0
+        spi-max-frequency = <1000000>;
+        irq-gpios = <&gpio0 08 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         status = "okay";
     };
 };
