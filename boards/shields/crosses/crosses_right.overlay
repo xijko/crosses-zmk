@@ -50,7 +50,6 @@
     status = "okay";
 
     pinctrl-0 = <&spi0_sck_pin &spi0_mosi_pin &spi0_miso_pin>;
-    pinctrl-1 = <&spi0_cs_pin>;
     cs-gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;
 
     glidepoint0: glidepoint@0 {
