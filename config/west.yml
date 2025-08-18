@@ -4,12 +4,12 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: petejohanson # <-- enable the drivers
       url-base: https://github.com/petejohanson
-    - name: mctechnology17 # <-- enable this module
-      url-base: https://github.com/mctechnology17
   projects:
-    - name: zmk
+    - name: cirque-input-module
       remote: petejohanson
-      revision: feat/pointers-move-scroll
-      import: app/west.yml
+      revision: main
+    - name: zmk
+      remote: zmkfirmware
+      revision: main
   self:
     path: config
