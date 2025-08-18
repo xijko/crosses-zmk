@@ -50,29 +50,32 @@
     status = "okay";
 
     pinctrl-0 = <&spi0_sck_pin &spi0_mosi_pin &spi0_miso_pin>;
+    pinctrl-1 = <&spi0_cs_pin>;
     cs-gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;
 
     glidepoint0: glidepoint@0 {
         compatible = "cirque,glidepoint";
-        reg = <0>;  /* CS index 0 */
+        reg = <0>;
         spi-max-frequency = <1000000>;
         irq-gpios = <&gpio0 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         status = "okay";
     };
 };
 
-/* Define SPI pins via pinctrl nodes */
 &gpio0 {
     spi0_sck_pin: spi0_sck_pin {
-        nordic,nrf-pin = <31>;
-        nordic,nrf-pin-function = <1>; /* SPIM SCK */
+        gpio-hog;
+        gpios = <31 GPIO_ACTIVE_HIGH>;
+        input;
     };
     spi0_mosi_pin: spi0_mosi_pin {
-        nordic,nrf-pin = <29>;
-        nordic,nrf-pin-function = <1>; /* SPIM MOSI */
+        gpio-hog;
+        gpios = <29 GPIO_ACTIVE_HIGH>;
+        input;
     };
     spi0_miso_pin: spi0_miso_pin {
-        nordic,nrf-pin = <20>;
-        nordic,nrf-pin-function = <1>; /* SPIM MISO */
+        gpio-hog;
+        gpios = <20 GPIO_ACTIVE_HIGH>;
+        input;
     };
 };
