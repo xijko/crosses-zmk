@@ -29,7 +29,7 @@
     status = "okay";
 };
 
-{
+/{
     chosen {
         // Peripheral (secondary) half
         zmk,split-role = "peripheral";
