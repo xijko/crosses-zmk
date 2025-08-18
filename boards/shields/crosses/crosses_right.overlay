@@ -33,3 +33,9 @@
 &glidepoint_listener {
     status = "okay";
 };
+
+/ {
+    chosen {
+        zephyr,exclude = &glidepoint_split_0;
+    };
+};
