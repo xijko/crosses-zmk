@@ -35,10 +35,30 @@
 };
 
 / {
+    chosen {
+        // Peripheral (secondary) half
+        zmk,split-role = "peripheral";
+    };
+
     split_inputs {
         glidepoint_split_0: glidepoint_split_0 {
             compatible = "zmk,input-split";
-            status = "disabled";
+            status = "okay";
+            input = <&glidepoint0>;
         };
+    };
+};
+
+// Cirque Glidepoint on SPI
+&spi1 {
+    status = "okay";
+    cs-gpios = <&gpio0 06 GPIO_ACTIVE_LOW>;   // chip select pin
+
+    glidepoint0: glidepoint@0 {
+        compatible = "cirque,glidepoint";
+        reg = <0>;  // chip select 0 on spi1
+        spi-max-frequency = <1000000>; // 1MHz, adjust if needed
+        irq-gpios = <&gpio0 08 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; // INT/RDY pin
+        status = "okay";
     };
 };
