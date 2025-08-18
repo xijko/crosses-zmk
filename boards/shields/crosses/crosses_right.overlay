@@ -35,12 +35,12 @@
         zmk,split-role = "peripheral";
     };
 
-    split_inputs {
+    split_inputs: split_inputs {
         glidepoint_split_0: glidepoint_split_0 {
             compatible = "zmk,input-split";
             status = "okay";
-            reg = <0>;                     // Required 'reg'
-            device = <&glidepoint0>; 
+            reg = <0>;
+            device = <&glidepoint0>;
         };
     };
 };
