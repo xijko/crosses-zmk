@@ -23,3 +23,17 @@
 &left_encoder {
     status = "okay";
 };
+/ {
+    chosen {
+        // Central (host) half
+        zmk,split-role = "central";
+    };
+
+    // Keep the node consistent but disabled here
+    split_inputs {
+        glidepoint_split_0: glidepoint_split_0 {
+            compatible = "zmk,input-split";
+            status = "disabled";
+        };
+    };
+};
