@@ -37,10 +37,11 @@
     };
 
     split_inputs {
-        glidepoint_split_0: glidepoint_split_0 {
+        glidepoint_split_0: glidepoint_split_0@0 {
             compatible = "zmk,input-split";
             status = "okay";
             reg = <0>;
+            input = <&glidepoint0>;
         };
     };
 };
