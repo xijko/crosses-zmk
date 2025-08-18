@@ -41,7 +41,7 @@
             compatible = "zmk,input-split";
             status = "okay";
             reg = <0>;                     // Required 'reg'
-            input-devices = <&glidepoint0>; // Use input-devices instead of input
+            input = <&glidepoint0>; // Use input-devices instead of input
         };
     };
 };
