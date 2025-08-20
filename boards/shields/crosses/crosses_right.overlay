@@ -30,31 +30,37 @@
 &glidepoint_listener {
     status = "okay";
 };
-/{
+/* Peripheral-side split config */
+ / {
     split {
         compatible = "zmk,split-bluetooth-peripheral";
 
         split-inputs {
             compatible = "zmk,split-inputs";
 
-            glidepoint_split_0: glidepoint0 {
-                compatible = "cirque,glidepoint";
-                reg = <0>; /* matches chip select index on SPI */
-                spi-max-frequency = <1000000>;
-                irq-gpios = <&gpio0 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-                status = "okay";
-                bus = <&spi0>;
+            glidepoint_split_0: glidepoint_ref {
+                compatible = "zmk,input-ref";
+                input = <&glidepoint0>;
             };
         };
     };
 };
 
+/* Enable SPI0 bus for the glidepoint */
 &spi0 {
     status = "okay";
     pinctrl-0 = <&spi0_default>;
     pinctrl-1 = <&spi0_sleep>;
     pinctrl-names = "default", "sleep";
     cs-gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;
+
+    glidepoint0: glidepoint@0 {
+        compatible = "cirque,glidepoint";
+        reg = <0>; /* chip select index */
+        spi-max-frequency = <1000000>;
+        irq-gpios = <&gpio0 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        status = "okay";
+    };
 };
 
 // Pin control group for SPI0
