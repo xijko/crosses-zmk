@@ -30,19 +30,20 @@
 &glidepoint_listener {
     status = "okay";
 };
-&split {
-    compatible = "zmk,split-bluetooth-peripheral";
+    split {
+        compatible = "zmk,split-bluetooth-peripheral";
 
-    split-inputs {
-        compatible = "zmk,split-inputs";
+        split-inputs {
+            compatible = "zmk,split-inputs";
 
-        glidepoint_split_0: glidepoint0 {
-            compatible = "cirque,glidepoint";
-            reg = <0>; /* matches chip select index on SPI */
-            spi-max-frequency = <1000000>;
-            irq-gpios = <&gpio0 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-            status = "okay";
-            bus = <&spi0>;
+            glidepoint_split_0: glidepoint0 {
+                compatible = "cirque,glidepoint";
+                reg = <0>; /* matches chip select index on SPI */
+                spi-max-frequency = <1000000>;
+                irq-gpios = <&gpio0 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+                status = "okay";
+                bus = <&spi0>;
+            };
         };
     };
 };
