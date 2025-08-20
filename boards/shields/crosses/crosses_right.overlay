@@ -5,7 +5,12 @@
 &default_transform {
     col-offset = <6>;
 };
-
+/ {
+    chosen {
+        // Central (host) half
+        zmk,split-role = "central";
+    };
+};
 /* Key matrix */
 &kscan0 {
     col-gpios = 
