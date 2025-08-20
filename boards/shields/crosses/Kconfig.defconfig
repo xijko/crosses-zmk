@@ -1,6 +1,6 @@
 CONFIG_ZMK_USB=y
 
-if SHIELD_CROSSES_LEFT
+if SHIELD_CROSSES_RIGHT
 
 config ZMK_KEYBOARD_NAME
   default "Crossyboi BLE"
