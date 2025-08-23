@@ -40,8 +40,7 @@
             >;
 
             sensor-bindings =
-                <&inc_dec_kp C_VOL_DN C_VOL_UP>,
-                <&inc_dec_kp PG_UP PAGE_DOWN>;
+                <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         functions {
@@ -55,7 +54,6 @@
             >;
 
             sensor-bindings =
-                <&inc_dec_kp RIGHT LEFT>,
                 <&inc_dec_kp RIGHT LEFT>;
         };
 
