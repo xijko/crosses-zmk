@@ -18,7 +18,7 @@
     
     tpad_central_scroll {
         compatible = "zmk,input-behavior-listener";
-        device = <&glidepoint1>;
+        device = <&glidepoint0>;
         layers = <NUM>;
         /* NOTE: only apply input-code overriding for INPUT_EV_REL */
         evt-type = <INPUT_EV_REL>;
