@@ -17,3 +17,10 @@ config ZMK_SPLIT
   default y
 
 endif
+
+if ZMK_MOUSE
+
+config SPI
+  default y
+
+endif # ZMK_MOUSE
