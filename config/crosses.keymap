@@ -75,8 +75,7 @@
                                       &kp K_PLAY_PAUSE  &kp SPACE  &mo 1   &mo 2   &kp ENTER  &kp RCTRL
             >;
 
-            sensor-bindings =
-                <&inc_dec_kp C_VOL_DN C_VOL_UP>;
+           // sensor-bindings =<&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         functions {
@@ -89,8 +88,7 @@
                                 &trans     &trans  &trans  &trans  &trans  &trans
             >;
 
-            sensor-bindings =
-                <&inc_dec_kp RIGHT LEFT>;
+          //  sensor-bindings = <&inc_dec_kp RIGHT LEFT>;
         };
 
         raise {
