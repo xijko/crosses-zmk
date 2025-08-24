@@ -9,6 +9,7 @@
     tpad_central_listener {
         compatible = "zmk,input-behavior-listener";
         device = <&glidepoint0>;
+        layers = <0 1>;
         y-invert;
         scale-multiplier = <2>;
         // xy-swap;
@@ -19,7 +20,7 @@
     tpad_central_scroll {
         compatible = "zmk,input-behavior-listener";
         device = <&glidepoint0>;
-        layers = <NUM>;
+        layers = <2>;
         /* NOTE: only apply input-code overriding for INPUT_EV_REL */
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_HWHEEL>;
