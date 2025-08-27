@@ -25,7 +25,6 @@ RC(0,0)  RC(0,1)  RC(0,10) RC(0,11) RC(1,0)  RC(1,1)  RC(1,2)  RC(1,3)  RC(1,4) 
         wakeup-source;
     };
 
-  	/*
 left_encoder: encoder_left {
 		compatible = "alps,ec11";
 		label = "LEFT_ENCODER";
@@ -40,44 +39,23 @@ left_encoder: encoder_left {
 		compatible = "zmk,keymap-sensors";
 		sensors = <&left_encoder>;
 	};
-*/
 
 };
-/* SPI bus for Glidepoint */
-&spi0 {
-    status = "okay";
-    pinctrl-0 = <&spi0_default>;
-    pinctrl-1 = <&spi0_sleep>;
-    pinctrl-names = "default","sleep";
-    cs-gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;
 
-    glidepoint0: glidepoint@0 {
-        compatible = "cirque,glidepoint";
-        reg = <0>;                   /* just the chip select index */
-        spi-max-frequency = <1000000>;
-
-        //irq-gpios = <&gpio0 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        status = "okay";
-    };
+&pro_micro_i2c {
+    status = "disabled";
 };
 
-/* Pin control group for SPI0 */
-&pinctrl {
-    spi0_default: spi0_default {
-        group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 0, 31)>,
-                    <NRF_PSEL(SPIM_MOSI, 0, 29)>,
-                    <NRF_PSEL(SPIM_MISO, 0, 20)>;
+// Cirque Trackpad if the Left side is central, comment otherwise
+
+/ {
+    split_inputs {
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        glidepoint_split: glidepoint_split@0 {
+            compatible = "zmk,input-split";
+            reg = <0>;
         };
     };
-
-spi0_sleep: spi0_sleep {
-        group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 0, 31)>,
-                    <NRF_PSEL(SPIM_MOSI, 0, 29)>,
-                    <NRF_PSEL(SPIM_MISO, 0, 20)>;
-            low-power-enable;
-        };
-    };
-
 };
