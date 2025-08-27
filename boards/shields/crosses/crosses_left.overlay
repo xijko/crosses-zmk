@@ -1,5 +1,5 @@
 #include "crosses.dtsi"
-// #include "crosses_left_i2c.dtsi"
+#include "crosses_left_i2c.dtsi"
 
 &kscan0 {
   col-gpios
