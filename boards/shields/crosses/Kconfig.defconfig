@@ -1,7 +1,7 @@
 CONFIG_ZMK_USB=y
 CONFIG_LOG_PROCESS_THREAD_STARTUP_DELAY_MS = 8000
 
-if SHIELD_CROSSES_RIGHT
+if SHIELD_CROSSES_LEFT
 
 config ZMK_KEYBOARD_NAME
   default "Crossyboi BLE"
@@ -11,7 +11,17 @@ config ZMK_SPLIT_ROLE_CENTRAL
 
 endif
 
+if SHIELD_CROSSES_RIGHT
+
+config I2C
+  default y
+
+endif
+
 if SHIELD_CROSSES_LEFT || SHIELD_CROSSES_RIGHT
+
+config ZMK_POINTING
+  default y
 
 config ZMK_SPLIT
   default y
@@ -20,7 +30,7 @@ endif
 
 if ZMK_MOUSE
 
-config SPI
+config I2C
   default y
 
 endif # ZMK_MOUSE
