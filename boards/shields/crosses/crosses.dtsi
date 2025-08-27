@@ -46,8 +46,6 @@ left_encoder: encoder_left {
     status = "disabled";
 };
 
-// Cirque Trackpad if the Left side is central, comment otherwise
-
 / {
     split_inputs {
         #address-cells = <1>;
@@ -57,5 +55,11 @@ left_encoder: encoder_left {
             compatible = "zmk,input-split";
             reg = <0>;
         };
+    };
+
+    glidepoint_listener: glidepoint_listener {
+        compatible = "zmk,input-listener";
+        status = "disabled";
+        device = <&glidepoint_split>;
     };
 };
