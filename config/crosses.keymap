@@ -22,7 +22,7 @@
         compatible = "zmk,input-behavior-listener";
         device = <&glidepoint0>;
         layers = <2>;
-        /* NOTE: only apply input-code overriding for INPUT_EV_REL */
+        // NOTE: only apply input-code overriding for INPUT_EV_REL
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_HWHEEL>;
         y-input-code = <INPUT_REL_WHEEL>;
