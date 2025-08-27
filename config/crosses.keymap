@@ -4,8 +4,9 @@
 #include <dt-bindings/zmk/mouse.h>
 #include <behaviors/mouse_keys.dtsi>
 
-/ {
 
+/ {
+/*
     tpad_central_listener {
         compatible = "zmk,input-behavior-listener";
         device = <&glidepoint0>;
@@ -34,7 +35,7 @@
             evt-type = <INPUT_EV_REL>;
             input-code = <INPUT_REL_WHEEL>;
     };
-
+*/
     combos {
         compatible = "zmk,combos";
 
