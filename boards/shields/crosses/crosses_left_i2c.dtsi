@@ -9,3 +9,6 @@
 #include "crosses.dtsi"
 
 // Cirque Trackpad if the Left side is central, comment otherwise
+&glidepoint_listener {
+    status = "okay";
+};
