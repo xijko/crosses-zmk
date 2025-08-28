@@ -16,6 +16,9 @@ if SHIELD_CROSSES_RIGHT
 config I2C
   default y
 
+config SPI
+  default y
+
 endif
 
 if SHIELD_CROSSES_LEFT || SHIELD_CROSSES_RIGHT
@@ -31,6 +34,9 @@ endif
 if ZMK_MOUSE
 
 config I2C
+  default y
+
+config SPI
   default y
 
 endif # ZMK_MOUSE
