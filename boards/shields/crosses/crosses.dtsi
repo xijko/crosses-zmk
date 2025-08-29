@@ -42,7 +42,7 @@ left_encoder: encoder_left {
 
 };
 
-&pro_micro_i2c {
+&spi0 {
     status = "disabled";
 };
 
