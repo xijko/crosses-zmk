@@ -29,7 +29,7 @@
     };
 };
 
-&pro_micro_spi {
+&spi0 {
     status = "okay";
     cs-gpios = <&pro_micro 19 GPIO_ACTIVE_LOW>;
     pinctrl-0 = <&spi0_default>;
