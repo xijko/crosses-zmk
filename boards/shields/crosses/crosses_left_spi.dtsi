@@ -7,20 +7,19 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 #include "crosses.dtsi"
-/{
-    split_inputs {
-        #address-cells = <1>;
-        #size-cells = <0>;
-        glidepoint_split: glidepoint_split@0{
-            compatible = "zmk,input-split";
-            reg = <0>;
-            //status = "okay";
-        };
-    };
 
-    glidepoint_listener: glidepoint_listener {
-        compatible = "zmk,input-listener";
-        status = "okay";
-        device = <&glidepoint_split>;
+split_inputs {
+    #address-cells = <1>;
+    #size-cells = <0>;
+    glidepoint_split: glidepoint_split@0{
+        compatible = "zmk,input-split";
+        reg = <0>;
+        //status = "okay";
     };
-}
+};
+
+glidepoint_listener: glidepoint_listener {
+    compatible = "zmk,input-listener";
+    status = "okay";
+    device = <&glidepoint_split>;
+};
