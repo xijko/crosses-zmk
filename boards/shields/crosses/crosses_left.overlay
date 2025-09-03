@@ -23,6 +23,8 @@
 &left_encoder {
     status = "okay";
 };
+
+/*
 /{
 split_inputs {
     #address-cells = <1>;
@@ -30,7 +32,6 @@ split_inputs {
     glidepoint_split: glidepoint_split@0{
         compatible = "zmk,input-split";
         reg = <0>;
-        //status = "okay";
     };
 };
 
@@ -40,3 +41,4 @@ glidepoint_listener: glidepoint_listener {
     device = <&glidepoint_split>;
 };
 }
+*/
