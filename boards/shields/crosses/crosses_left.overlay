@@ -23,7 +23,7 @@
 &left_encoder {
     status = "okay";
 };
-
+/{
 split_inputs {
     #address-cells = <1>;
     #size-cells = <0>;
@@ -39,3 +39,4 @@ glidepoint_listener: glidepoint_listener {
     status = "okay";
     device = <&glidepoint_split>;
 };
+}
