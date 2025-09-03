@@ -1,5 +1,6 @@
 #include "crosses.dtsi"
 
+/{
 &kscan0 {
   col-gpios
     = <&gpio0 2 GPIO_ACTIVE_HIGH>
@@ -24,8 +25,7 @@
     status = "okay";
 };
 
-/*
-/{
+
 split_inputs {
     #address-cells = <1>;
     #size-cells = <0>;
@@ -41,4 +41,3 @@ glidepoint_listener: glidepoint_listener {
     device = <&glidepoint_split>;
 };
 }
-*/
