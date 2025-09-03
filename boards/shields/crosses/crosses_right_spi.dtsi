@@ -36,7 +36,7 @@
     pinctrl-1 = <&spi0_sleep>;
     pinctrl-names = "default", "sleep";
 
-    glidepoint: glidepoint@0 {
+    trackpad: glidepoint@0 {
         compatible = "cirque,pinnacle";
         reg = <0>;
         spi-max-frequency = <1000000>;
