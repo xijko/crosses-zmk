@@ -1,5 +1,4 @@
 #include "crosses.dtsi"
-#include "crosses_left_spi.dtsi"
 
 &kscan0 {
   col-gpios
@@ -23,4 +22,20 @@
 
 &left_encoder {
     status = "okay";
+};
+
+split_inputs {
+    #address-cells = <1>;
+    #size-cells = <0>;
+    glidepoint_split: glidepoint_split@0{
+        compatible = "zmk,input-split";
+        reg = <0>;
+        //status = "okay";
+    };
+};
+
+glidepoint_listener: glidepoint_listener {
+    compatible = "zmk,input-listener";
+    status = "okay";
+    device = <&glidepoint_split>;
 };
