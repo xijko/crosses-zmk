@@ -1,5 +1,6 @@
 #include "crosses.dtsi"
 #include <zephyr/dt-bindings/input/input-event-codes.h>
+#include "crosses_right_spi.dtsi"
 
 /* Default keymap transform */
 &default_transform {
