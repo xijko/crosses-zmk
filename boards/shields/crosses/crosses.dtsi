@@ -57,6 +57,6 @@ left_encoder: encoder_left {
 
 };
 
-&spi0 {
+&i2c0 {
     status = "disabled";
 };
