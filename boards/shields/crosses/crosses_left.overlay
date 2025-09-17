@@ -24,9 +24,3 @@
   &left_encoder {
       status = "okay";
   };
-  
-  &glidepoint_listener {
-      compatible = "zmk,input-listener";
-      status = "okay";
-      device = <&glidepoint_split>;
-  };
