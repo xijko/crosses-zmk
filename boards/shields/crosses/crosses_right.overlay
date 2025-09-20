@@ -24,7 +24,7 @@
         <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
         <&gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
 };
-
+/*
 &pinctrl {
     i2c0_default {
         group1 {
@@ -41,7 +41,7 @@
         };
     };
 };
-
+*/
 &pro_micro_i2c {
     status = "okay";
     glidepoint: glidepoint@2a {
