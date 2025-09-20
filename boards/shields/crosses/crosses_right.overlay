@@ -49,7 +49,7 @@
         status = "okay";
         reg = <0x2a>;
         // Note that this is only applicable in v1.1 or above
-        dr-gpios = <&gpio0 6 (GPIO_ACTIVE_HIGH)>;
+        // dr-gpios = <&gpio0 6 (GPIO_ACTIVE_HIGH)>;
         sensitivity = "4x";
     };
 };
