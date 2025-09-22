@@ -20,7 +20,11 @@
         , <&gpio1 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
         ;
   };
-  
+
+&glidepoint_listener {
+    status = "okay";
+};
+
   &left_encoder {
       status = "okay";
   };
