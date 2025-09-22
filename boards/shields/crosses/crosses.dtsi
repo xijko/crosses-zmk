@@ -40,14 +40,56 @@ RC(0,0)  RC(0,1)  RC(0,10) RC(0,11) RC(1,0)  RC(1,1)  RC(1,2)  RC(1,3)  RC(1,4) 
         //device = <&glidepoint_split>;
     };
 
-left_encoder: encoder_left {
-		compatible = "alps,ec11";
-		label = "LEFT_ENCODER";
-        a-gpios = <&gpio0 31 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        b-gpios = <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-	steps = <80>;
-		status = "disabled";
+	&pinctrl {
+	    /* configuration for spi0 device, default state */
+	    spi0_default: spi0_default {
+	        /* node name is arbitrary */
+	        group1 {
+	            /* main role: configure P0.01 as SPI clock, P0.02 as SPI MOSI, P0.03 as SPI MISO */
+	            psels = <NRF_PSEL(SPIM_SCK, 0, 1)>,
+	                    <NRF_PSEL(SPIM_MOSI, 0, 2)>,
+	                    <NRF_PSEL(SPIM_MISO, 0, 3)>;
+	        };
+	    };
+	
+	    /* configuration for spi0 device, sleep state */
+	    spi0_sleep: spi0_sleep {
+	        group1 {
+	            /* main role: configure P0.01 as SPI clock, P0.02 as SPI MOSI, P0.03 as SPI MISO */
+	            psels = <NRF_PSEL(SPIM_SCK, 0, 1)>,
+	                    <NRF_PSEL(SPIM_MOSI, 0, 2)>,
+	                    <NRF_PSEL(SPIM_MISO, 0, 3)>;
+	            low-power-enable;
+	        };
+	    };
+	
 	};
+	
+	&spi0 {
+	    compatible = "nordic,nrf-spim";
+	    pinctrl-0 = <&spi0_default>;
+	    pinctrl-1 = <&spi0_sleep>;
+	    pinctrl-names = "default", "sleep";
+	    status = "disabled";
+	    cs-gpios = <&pro_micro 19 GPIO_ACTIVE_LOW>;
+	    glidepoint: glidepoint@2a {
+	        compatible = "cirque,pinnacle";
+	        status = "disabled";
+	        reg = <0x2a>;
+	        // Note that this is only applicable in v1.1 or above
+	        dr-gpios = <&gpio0 29 (GPIO_ACTIVE_HIGH)>;
+	        sensitivity = "4x";
+	    };
+	};
+	
+	left_encoder: encoder_left {
+			compatible = "alps,ec11";
+			label = "LEFT_ENCODER";
+	        a-gpios = <&gpio0 31 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+	        b-gpios = <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+			steps = <80>;
+			status = "disabled";
+		};
 
     sensors {
 		compatible = "zmk,keymap-sensors";
