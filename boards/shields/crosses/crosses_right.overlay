@@ -24,33 +24,11 @@
         <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
         <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
 };
-/*
-&pinctrl {
-    i2c0_default {
-        group1 {
-            psels = <NRF_PSEL(TWIM_SDA, 0, 17)>,
-                <NRF_PSEL(TWIM_SCL, 0, 20)>;
-            bias-pull-up;
-        };
-    };
-    i2c0_sleep: i2c0_sleep {
-        group1 {
-            psels = <NRF_PSEL(TWIM_SDA, 0, 17)>,
-                <NRF_PSEL(TWIM_SCL, 0, 20)>;
-            low-power-enable;
-        };
-    };
-};
 
 &pro_micro_i2c {
     status = "okay";
     glidepoint: glidepoint@2a {
-        compatible = "cirque,pinnacle";
         status = "okay";
-        reg = <0x2a>;
-        // Note that this is only applicable in v1.1 or above
-        dr-gpios = <&gpio0 29 (GPIO_ACTIVE_HIGH)>;
-        sensitivity = "4x";
     };
 };
 
@@ -58,4 +36,3 @@
     status = "okay";
     device = <&glidepoint>;
 };
-*/
