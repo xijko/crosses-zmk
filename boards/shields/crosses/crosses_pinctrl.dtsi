@@ -23,20 +23,3 @@
 	
 	};
 
-
-	&spi0 {
-	    compatible = "nordic,nrf-spim";
-	    pinctrl-0 = <&spi0_default>;
-	    pinctrl-1 = <&spi0_sleep>;
-	    pinctrl-names = "default", "sleep";
-	    status = "disabled";
-	    cs-gpios = <&pro_micro 19 GPIO_ACTIVE_LOW>;
-	    glidepoint: glidepoint@2a {
-	        compatible = "cirque,pinnacle";
-	        status = "disabled";
-	        reg = <0x2a>;
-	        // Note that this is only applicable in v1.1 or above
-	        dr-gpios = <&gpio0 29 (GPIO_ACTIVE_HIGH)>;
-	        sensitivity = "4x";
-	    };
-	};
