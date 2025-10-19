@@ -1,5 +1,6 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 #include "crosses-layouts.dtsi"
+#include "crosses_pinctrl.dtsi"
 
 &physical_layout0 {
   transform = <&default_transform>;
