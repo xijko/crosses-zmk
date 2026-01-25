@@ -21,7 +21,7 @@ if SHIELD_CROSSES_DONGLE
 
 # Max 16 characters in keyboard name
 config ZMK_KEYBOARD_NAME
-    default "My Board"
+    default "Crossyboi BLE"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
