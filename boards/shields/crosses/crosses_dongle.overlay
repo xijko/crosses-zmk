@@ -2,6 +2,7 @@
 #include "crosses-layouts.dtsi"
 
 &physical_layout0 {
+    kscan = <&mock_kscan>;
     transform = <&default_transform>;
 };
 
