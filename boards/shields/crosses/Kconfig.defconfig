@@ -17,7 +17,7 @@ config ZMK_SPLIT
 
 endif
 
-if SHIELD_CROSSES_DONGLE
+if SHIELD_CROSSES_LEFT
 
 # Max 16 characters in keyboard name
 config ZMK_KEYBOARD_NAME
@@ -31,8 +31,8 @@ config ZMK_SPLIT
 
 # Set this to the number of peripherals your dongle will have.
 # For a unibody, this would be 1. If you have left and right halves, set it to 2, etc.
-config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
-    default 2
+#config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
+#    default 2
 
 # Set this to ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS + your desired number of BT profiles (default is 5)
 config BT_MAX_CONN
